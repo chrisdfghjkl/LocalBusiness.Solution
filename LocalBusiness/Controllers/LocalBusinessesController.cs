@@ -24,6 +24,20 @@ namespace LocalBusiness.Controllers
       return await _db.Businesses.ToListAsync();
     }
 
+    // GET: api/Businesses/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Business>> GetBusiness(int id)
+    {
+      var business = await _db.Businesses.FindAsync(id);
+
+      if (business == null)
+      {
+          return NotFound();
+      }
+
+      return business;
+}
+
     // POST api/businesses
     [HttpPost]
     public async Task<ActionResult<Business>> Post(Business business)
