@@ -10,7 +10,5 @@ namespace LocalBusiness.Models
         public string Address { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
-        public int Rating { get; set; }
-        public string Review { get; set; }
     }
 }
