@@ -22,9 +22,31 @@ namespace LocalBusiness.Controllers
 
     // GET api/businesses
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Business>>> Get()
+    public async Task<ActionResult<IEnumerable<Business>>> Get(string category, string state, string city, string zip)
     {
-      return await _db.Businesses.ToListAsync();
+      var query = _db.Businesses.AsQueryable();
+
+      if (city != null)
+      {
+        query = query.Where(entry => entry.City == city);
+      }
+
+      if (category != null)
+      {
+        query = query.Where(entry => entry.Category == category);
+      }    
+
+      if (state != null)
+      {
+        query = query.Where(entry => entry.State == state);
+      }
+
+      if (zip != null)
+      {
+        query = query.Where(entry => entry.Zip == zip);
+      }
+      
+      return await query.ToListAsync();
     }
 
     // GET: api/Businesses/5
