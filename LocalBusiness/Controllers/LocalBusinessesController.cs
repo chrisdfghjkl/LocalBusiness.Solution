@@ -49,7 +49,7 @@ namespace LocalBusiness.Controllers
       return await query.ToListAsync();
     }
 
-    // GET: api/Businesses/5
+    // GET: api/Businesses/{id}
     [HttpGet("{id}")]
     public async Task<ActionResult<Business>> GetBusiness(int id)
     {
@@ -63,7 +63,19 @@ namespace LocalBusiness.Controllers
       return business;
     }
 
-    // PUT: api/Businesses/5
+    //GET: businesses/random
+    [HttpGet("random")]
+    public async Task<ActionResult<Business>> GetRandom()
+    {
+      List<Business> allBusinesses = await _db.Businesses.ToListAsync();
+      int numberOfEntries = allBusinesses.Count;
+      Random randomNumberGenerator = new Random();
+      int randomIndex = randomNumberGenerator.Next(0, numberOfEntries);
+      Business randomBusiness = allBusinesses[randomIndex];
+      return randomBusiness;
+    }
+
+    // PUT: api/Businesses/{id}
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Business business)
     {
@@ -103,7 +115,7 @@ namespace LocalBusiness.Controllers
       return CreatedAtAction(nameof(GetBusiness), new { id = business.BusinessId }, business);
     }
 
-    // DELETE: api/Businesses/5
+    // DELETE: api/Businesses/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBusiness(int id)
     {
