@@ -1,6 +1,5 @@
 # Local Business Lookup
 ##### By Chris DePastene
-#
 ------------------------------
 
 ### <u>Table of Contents</u>
