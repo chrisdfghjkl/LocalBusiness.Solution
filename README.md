@@ -210,6 +210,21 @@ An API that allows a user to view, post, edit, and delete local business entries
 }
   ```
 
+  ### GET /businesses/random
+  
+
+  | Parameter | Type | Default | Required | Description |
+  | :---: | :---: | :---: | :---: | --- |
+  | random | string | none | true | a random business
+
+
+  This route allows you to view a random business with each call 
+  
+  #### Example Query
+  ```
+  http://localhost:5000/api/businesses/random
+  ```
+
   ### POST /businesses
 
   This route allows you to add a new business by putting code like this into the request body:
