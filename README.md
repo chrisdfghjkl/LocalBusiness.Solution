@@ -273,7 +273,7 @@ An API that allows a user to view, post, edit, and delete local business entries
   
   #### Example Query
   ```
-  https://localhost:5000/api/parks/8
+  https://localhost:5000/api/businesses/8
   ```
   #### Sample JSON Response
   ```
