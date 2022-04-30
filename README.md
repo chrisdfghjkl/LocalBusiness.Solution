@@ -27,6 +27,7 @@ An API that allows a user to view, post, edit, and delete local business entries
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 * [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1)
 * [MySQL](https://dev.mysql.com/)
+* [Swagger](https://swagger.io/)
 * [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Postman](postman.com)
@@ -96,6 +97,7 @@ An API that allows a user to view, post, edit, and delete local business entries
   
   ### Endpoints
   Base URL: `https://localhost:5000`
+  *(follow this URL to access the Swagger documentation page)*
  
   
    #### HTTP Request Structure
